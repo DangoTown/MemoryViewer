@@ -43,22 +43,13 @@ class MemoryViewer : DedicatedServerModInitializer {
     }
 
     private fun getHeader(): MutableText {
-        return Text.literal("Memory Viewer ")
-            .styled { it.withColor(Formatting.DARK_PURPLE).withItalic(true).withBold(true) }.append("made by ")
-            .append(Text.literal("RTAkland").styled {
-                it.withColor(Formatting.AQUA).withItalic(true).withBold(true)
-            }).styled {
-                it.withColor(Formatting.GREEN).withItalic(true)
-            }
+        return Text.literal("MemViewer by RTAkland")
     }
 
     private fun getFooter(): MutableText {
-        return Text.empty().append(Text.literal(this.getUsedMem().toString() + "M").styled {
-            it.withColor(Formatting.GREEN).withItalic(true)
-        }).append(Text.literal("/").styled { it.withColor(Formatting.WHITE).withItalic(true).withBold(true) })
-            .append(Text.literal(this.getTotalMem().toString() + "M").styled {
-                it.withColor(Formatting.DARK_PURPLE).withItalic(true)
-            })
+        return Text.empty().append(
+            Text.literal(this.getUsedMem().toString()).append(" M")
+        ).append(Text.literal(" / ")).append(Text.literal(this.getTotalMem().toString())).append(" M")
     }
 
     override fun onInitializeServer() {
