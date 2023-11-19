@@ -55,7 +55,7 @@ class MemoryViewer : DedicatedServerModInitializer {
     private fun getFooter(): MutableText {
         return Text.empty().append(Text.literal(this.getUsedMem().toString() + "M").styled {
             it.withColor(Formatting.GREEN).withItalic(true)
-        }).append(Text.literal("/").styled { it.withColor(Formatting.BLACK).withItalic(true).withBold(true) })
+        }).append(Text.literal("/").styled { it.withColor(Formatting.WHITE).withItalic(true).withBold(true) })
             .append(Text.literal(this.getTotalMem().toString() + "M").styled {
                 it.withColor(Formatting.DARK_PURPLE).withItalic(true)
             })
